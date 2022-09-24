@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -15,7 +16,8 @@ class ViewController: UIViewController {
     
     var timer = Timer()
     var isTimerStarted = false
-    var time = 1500
+    var time = 10
+    var player:AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,27 +35,23 @@ class ViewController: UIViewController {
             startButton.setTitle("Pause", for: .normal)
             startButton.setTitleColor(UIColor.red, for: .normal)
             cancelButtonEnabledTrue()
-           
         }else{
             timer.invalidate()
             isTimerStarted = false
             startButton.setTitle("Resume", for: .normal)
             startButton.setTitleColor(UIColor.green, for: .normal)
             cancelButtonEnabledTrue()
-            
         }
     }
-    
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
         cancelButton.isEnabled = false
         cancelButton.alpha = 0.5
         timer.invalidate()
-        time = 1500
+        time = 10
         isTimerStarted = false
         timeLabel.text = "25.00"
         startButton.setTitle("Start", for: .normal)
-
     }
     
     func startTimer(){
@@ -69,10 +67,27 @@ class ViewController: UIViewController {
         
         let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60
+        if minutes == 0 && seconds == 0 {
+            timer.invalidate()
+            playSound()
+        }
         return String(format:"%02i:%02i", minutes, seconds)
     }
     func cancelButtonEnabledTrue(){
         cancelButton.isEnabled = true
         cancelButton.alpha = 1
+    }
+    func playSound() {
+        guard let path = Bundle.main.path(forResource: "alarm_sound", ofType:"mp3") else {
+            return }
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
 }
