@@ -52,6 +52,7 @@ class ViewController: UIViewController {
         isTimerStarted = false
         timeLabel.text = "25.00"
         startButton.setTitle("Start", for: .normal)
+        startButton.setTitleColor(UIColor.white, for: .normal)
     }
     
     func startTimer(){
