@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     var timer = Timer()
     var isTimerStarted = false
-    var time = 10
+    var time = 1500
     var player:AVAudioPlayer?
     
     override func viewDidLoad() {
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         cancelButton.isEnabled = false
         cancelButton.alpha = 0.5
         timer.invalidate()
-        time = 10
+        time = 1500
         isTimerStarted = false
         timeLabel.text = "25.00"
         startButton.setTitle("Start", for: .normal)

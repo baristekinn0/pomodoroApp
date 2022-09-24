@@ -28,6 +28,7 @@
 		BEE5713128DEFBDC002736E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEE5713328DEFBDC002736E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEE5713928DF5890002736E2 /* alarm_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm_sound.mp3; sourceTree = "<group>"; };
+		BEE5713B28DF6B68002736E2 /* pomodoroAppIcon */ = {isa = PBXFileReference; lastKnownFileType = file; path = pomodoroAppIcon; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +70,7 @@
 				BEE5713028DEFBDC002736E2 /* LaunchScreen.storyboard */,
 				BEE5713328DEFBDC002736E2 /* Info.plist */,
 				BEE5712B28DEFBDC002736E2 /* pomodoroApp.xcdatamodeld */,
+				BEE5713B28DF6B68002736E2 /* pomodoroAppIcon */,
 			);
 			path = pomodoroApp;
 			sourceTree = "<group>";
